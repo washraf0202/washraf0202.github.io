@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leonida Clips - Connecting to Instagram</title>
+<style>
+  body {
+    margin: 0;
+    background: #0b0d12;
+    color: #e8eaf0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 24px;
+  }
+  p { color: #9aa0b4; }
+  a { color: #5ce1ff; }
+</style>
+</head>
+<body>
+  <div>
+    <p>Connecting Leonida Clips to Instagram&hellip;</p>
+    <p id="fallback" style="display:none;">If this didn't redirect automatically, <a id="manual-link" href="#">click here</a> to continue (your local tool must be running).</p>
+  </div>
+  <script>
+    var target = "http://localhost:8000/instagram/callback" + window.location.search;
+    document.getElementById("manual-link").href = target;
+    document.getElementById("fallback").style.display = "block";
+    window.location.href = target;
+  </script>
+</body>
+</html>
